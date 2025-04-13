@@ -1,11 +1,12 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
+
 import ImgLoader from "../../assets/loader.gif";
-import WeatherContext from "../../context/WeatherContext";
 import WrapperWeatherInfos from "../WrapperWeatherInfos";
 import WrapperWeatherItem from "../WrapperWeatherItem";
 
 const WeatherInfos = () => {
-  const { weather, loading } = useContext(WeatherContext);
+  const weather = useSelector((state) => state.weather.data);
+  const loading = useSelector((state) => state.weather.loading);
 
   return (
     <WrapperWeatherInfos>
