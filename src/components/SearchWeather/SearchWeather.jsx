@@ -1,11 +1,10 @@
-// import { useContext } from "react";
+import { useDispatch } from "react-redux";
+
 import { styledInput } from "../../utils/inputStyles";
 import SearchWeatherWrapper from "../SearchWeatherWrapper";
 import SharedButton from "../SharedButton";
-// import WeatherContext from "../../context/WeatherContext";
-import { useDispatch } from "react-redux";
-import { fetchWeather } from "../../slices/WeatherSlice";
 import { useWeather } from "../../hooks";
+import { fetchWeather } from "../../redux/old-redux/actions";
 
 const SearchWeather = () => {
   const { city, setCity } = useWeather();
